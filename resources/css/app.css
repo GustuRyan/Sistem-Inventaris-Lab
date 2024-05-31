@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Roboto';
+}
+
+.bg-gradient-navy {
+    background: linear-gradient(180deg, #343C53 0%, #0E1731 100%);
+}
+
+/* CSS untuk menghilangkan scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.transition-left {
+    transition: left 0.8s ease-in-out;
+}
