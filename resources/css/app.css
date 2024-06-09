@@ -10,6 +10,14 @@ body {
     background: linear-gradient(180deg, #343C53 0%, #0E1731 100%);
 }
 
+.bg-gradient-lightblue {
+    background: linear-gradient(142deg, #CCD9FF 14.61%, #6F85C6 49.77%, #343C53 84.94%);
+}
+
+.bg-gradient-orange {
+    background: linear-gradient(180deg, #DDE0E9 0%, #F25F5F 50%, #36446A 100%);
+}
+
 /* CSS untuk menghilangkan scrollbar */
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -24,4 +32,8 @@ body {
 
 .transition-left {
     transition: left 0.8s ease-in-out;
+}
+
+.transition {
+    transition: all 0.8s ease-in-out;
 }

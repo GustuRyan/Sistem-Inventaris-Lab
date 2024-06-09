@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/', function () {
     return view('user.pages.homepage');
@@ -16,7 +18,11 @@ Route::get('/peminjaman', function () {
 })->name('peminjaman');
 
 Route::prefix('auth')->group(function () {
-    Route::get('/', function () {
-        return view('user.pages.auth');
-    });
+    Route::get('/{auth}', [LoginController::class, 'index'])->name('authentication');
+    Route::post('/sign-in', [LoginController::class, 'login'])->name('sign-in');
+    Route::post('/sign-up', [RegisterController::class, 'regist'])->name('sign-up');
+    Route::post('/logout', function () {
+        Auth::logout();
+        return redirect('/');
+    })->name('logout');    
 });
