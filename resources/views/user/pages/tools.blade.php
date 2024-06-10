@@ -5,7 +5,7 @@
 @section('contents')
 <section class="relative flex flex-col px-16 py-20 bg-white max-md:px-5">
     <div class="relative w-full mt-20 max-md:mt-10">
-        <div class="absolute inset-0" style="border-radius: 66px; background: linear-gradient(77deg, rgba(242, 94, 94, 0.50) 0%, rgba(242, 94, 94, 0.25) 36.4%, rgba(242, 94, 94, 0.10) 100%);"></div>
+        <div class="absolute inset-0" style="border-radius: 48px; background: linear-gradient(77deg, rgba(242, 94, 94, 0.50) 0%, rgba(242, 94, 94, 0.25) 36.4%, rgba(242, 94, 94, 0.10) 100%);"></div>
         <img 
             loading="lazy" 
             src="assets/img/Rectangle 1.png" 
@@ -70,8 +70,8 @@
                         class="object-cover absolute inset-0 size-full" 
                         alt="Image description"
                     />
-                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); width: 100%; height: 70vh;">
-                        <h3 class="mt-48 text-4xl font-normal text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
+                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); height: 100%;">
+                        <h3 class="mt-32 text-2xl font-bold text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
                         <button 
                             class="justify-center self-center px-10 py-3 mt-12 text-xl text-red-400 whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10"
                             tabindex="0"
@@ -89,8 +89,8 @@
                         class="object-cover absolute inset-0 size-full" 
                         alt="Image description"
                     />
-                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); width: 100%; height: 70vh;">
-                        <h3 class="mt-48 text-4xl font-normal text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
+                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); height: 100%;">
+                        <h3 class="mt-32 text-2xl font-bold text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
                         <button 
                             class="justify-center self-center px-10 py-3 mt-12 text-xl text-red-400 whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10"
                             tabindex="0"
@@ -108,8 +108,8 @@
                         class="object-cover absolute inset-0 size-full" 
                         alt="Image description"
                     />
-                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); width: 100%; height: 70vh;">
-                        <h3 class="mt-48 text-4xl font-normal text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
+                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); height: 100%;">
+                        <h3 class="mt-32 text-2xl font-bold text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
                         <button 
                             class="justify-center self-center px-10 py-3 mt-12 text-xl text-red-400 whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10"
                             tabindex="0"
@@ -127,8 +127,8 @@
                         class="object-cover absolute inset-0 size-full" 
                         alt="Image description"
                     />
-                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); width: 100%; height: 70vh;">
-                        <h3 class="mt-48 text-4xl font-normal text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
+                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); height: 100%;">
+                        <h3 class="mt-32 text-2xl font-bold text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
                         <button 
                             class="justify-center self-center px-10 py-3 mt-12 text-xl text-red-400 whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10"
                             tabindex="0"
@@ -150,8 +150,8 @@
                         class="object-cover absolute inset-0 size-full" 
                         alt="Image description"
                     />
-                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); width: 100%; height: 70vh;">
-                        <h3 class="mt-48 text-4xl font-normal text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
+                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); height: 100%;">
+                        <h3 class="mt-32 text-2xl font-bold text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
                         <button 
                             class="justify-center self-center px-10 py-3 mt-12 text-xl text-red-400 whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10"
                             tabindex="0"
@@ -169,8 +169,8 @@
                         class="object-cover absolute inset-0 size-full" 
                         alt="Image description"
                     />
-                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); width: 100%; height: 70vh;">
-                        <h3 class="mt-48 text-4xl font-normal text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
+                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); height: 100%;">
+                        <h3 class="mt-32 text-2xl font-bold text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
                         <button 
                             class="justify-center self-center px-10 py-3 mt-12 text-xl text-red-400 whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10"
                             tabindex="0"
@@ -188,8 +188,8 @@
                         class="object-cover absolute inset-0 size-full" 
                         alt="Image description"
                     />
-                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); width: 100%; height: 70vh;">
-                        <h3 class="mt-48 text-4xl font-normal text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
+                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); height: 100%;">
+                        <h3 class="mt-32 text-2xl font-bold text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
                         <button 
                             class="justify-center self-center px-10 py-3 mt-12 text-xl text-red-400 whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10"
                             tabindex="0"
@@ -207,8 +207,8 @@
                         class="object-cover absolute inset-0 size-full" 
                         alt="Image description"
                     />
-                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); width: 100%; height: 70vh;">
-                        <h3 class="mt-48 text-4xl font-normal text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
+                    <div class="flex relative flex-col px-9 pt-20 pb-14 rounded-2xl max-md:px-5" style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); height: 100%;">
+                        <h3 class="mt-32 text-2xl font-bold text-white max-md:mt-10">High Pressure Liquid Chromatography (HPLC)</h3>
                         <button 
                             class="justify-center self-center px-10 py-3 mt-12 text-xl text-red-400 whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10"
                             tabindex="0"
