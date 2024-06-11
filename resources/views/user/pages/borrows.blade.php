@@ -47,7 +47,7 @@ Peminjaman
                             <input type="date" id="tanggal_pengembalian" name="tanggal_pengembalian" class="p-3 border border-black text-base rounded-md">
                         </div>
                     </div>
-                    <button type="submit" class="bg-red-400 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-500 transition duration-300">SIMPAN</button>
+                    <button type="submit" class="mt-5 bg-red-400 text-white text-xl font-bold py-4 px-10 rounded-lg hover:bg-red-500 transition duration-300">SIMPAN</button>
                 </form>
             </div>
         </div>
