@@ -16,12 +16,17 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'username' => 'admin',
-            'name' => 'Administrator',
-            'email' => 'admin@example.com',
-            'phone' => '1234567890',
-            'password' => Hash::make('123456'),
-        ]);
+        // User::factory()->create([
+        //     'username' => 'admin',
+        //     'name' => 'Administrator',
+        //     'email' => 'admin@example.com',
+        //     'phone' => '1234567890',
+        //     'password' => Hash::make('123456'),
+        // ]);
+
+        // $this->call(RoomSeeder::class);
+        // $this->call(MaterialSeeder::class);
+        // $this->call(ToolSeeder::class);
+        $this->call(RoomDetailSeeder::class);
     }
 }

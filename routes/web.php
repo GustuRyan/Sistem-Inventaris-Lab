@@ -3,13 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\RoomController;
 
 Route::get('/', function () {
     return view('user.pages.homepage');
 })->name('dashboard');
-Route::get('/fakultas', function () {
-    return view('user.pages.major');
-})->name('fakultas');
+Route::get('/fakultas/{faculty}', [RoomController::class, 'faculty'])->name('fakultas');
+Route::get('/barang/{major}/{filter}', [RoomController::class, 'major'])->name('alat-bahan');
 Route::get('/barang', function () {
     return view('user.pages.tools');
 })->name('barang');

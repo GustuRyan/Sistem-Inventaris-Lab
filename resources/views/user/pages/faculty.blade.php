@@ -19,16 +19,46 @@
                 class="w-[88%] h-[244px] absolute top-[597.5px] z-10 grid grid-cols-2 px-16 py-10 rounded-[40px] shadow-lg bg-white">
                 <div class="flex gap-16">
                     <div class="w-[164px] h-[164px] rounded-2xl bg-[#515769] flex justify-center items-center">
-                        <img class="w-[150px] h-[150px]" src="/assets/img/logo-fmipa-(1)-1.png" alt="">
+                        @if ($faculty == 'FMIPA')
+                            <img class="w-[150px] h-[150px] rounded-full bg-white p-2" src="/assets/img/logo-fmipa-(1)-1.png"
+                                alt="">
+                        @endif
+                        @if ($faculty == 'FT')
+                            <img class="w-auto h-[150px] object-cover" src="/assets/img/logo-ft.png" alt="">
+                        @endif
+                        @if ($faculty == 'FK')
+                            <img class="w-[150px] h-[150px] object-cover rounded-full bg-white p-2"
+                                src="/assets/img/logo-fk.png" alt="">
+                        @endif
+                        @if ($faculty == 'FP')
+                            <img class="w-[150px] h-[150px] rounded-full" src="/assets/img/logo-fp.jpeg" alt="">
+                        @endif
+                        @if ($faculty == 'FKH')
+                            <img class="w-[150px] h-[150px] rounded-full" src="/assets/img/logo-fkh.jpeg" alt="">
+                        @endif
                     </div>
                     <p class="w-[300px] flex items-center text-[32px] font-bold text-black text-left">
-                        Matematika dan Ilmu Pengetahuan Alam
+                        @if ($faculty == 'FMIPA')
+                            Matematika dan Ilmu Pengetahuan Alam
+                        @endif
+                        @if ($faculty == 'FT')
+                            Teknik
+                        @endif
+                        @if ($faculty == 'FK')
+                            Kedokteran
+                        @endif
+                        @if ($faculty == 'FP')
+                            Pertanian
+                        @endif
+                        @if ($faculty == 'FKH')
+                            Kedokteran Hewan
+                        @endif
                     </p>
                 </div>
                 <div class="border-l-4 border-slate-300 px-16 flex gap-16">
                     <div
                         class="w-[164px] h-[164px] rounded-2xl bg-[#515769] font-bold text-[96px] flex items-center justify-center">
-                        8
+                        {{ $total }}
                     </div>
                     <span class="flex items-center text-[48px] font-bold text-black text-left">
                         Fasilitas
@@ -37,26 +67,30 @@
             </div>
         </div>
         <div class="w-full h-full grid grid-cols-4 px-24 pt-48 pb-24 gap-12">
-            @for ($i = 0; $i < 8; $i++)
+            @foreach ($faculty_rooms as $room)
                 <div class="w-[294px] h-[436px] relative flex flex-col justify-center items-center">
-                    <img src="assets\img\laboratory-worker-examining-substance-petri-dish-while-conducting-coronavirus-research-1.jpeg"
+                    <img src="/assets/img/laboratory-worker-examining-substance-petri-dish-while-conducting-coronavirus-research-1.jpeg"
                         class="w-[294px] h-[436px] rounded-2xl object-cover" />
                     <div class="w-[294px] h-[436px] absolute rounded-2xl flex flex-col items-center justify-center pt-24 gap-16"
                         style="background: linear-gradient(to bottom, rgba(140,54,54,0) 5%, #f25e5e 92.5%);">
                         <p class="w-[238px] z-10 text-2xl font-bold text-center text-white">
-                            Laboratorium Kimia Program Studi Kimia
+                            Nama Ruangan
+                            <br>
+                            {{ $room->room_name }}
                             <br><br>
                             <span class="font-normal">
-                                Jl. Goa Gong, Bukit Jimbaran
+                                Program Studi
+                                <br>
+                                {{ $room->major_name }}
                             </span>
                         </p>
-                        <a
+                        <a href="{{ route('alat-bahan', ['major' => $room->id, 'filter' => 'material']) }}"
                             class="h-[50px] p-3 z-10 rounded-3xl bg-white hover:bg-[#343C53] flex justify-center items-center text-[20px] text-[#f25e5e]">
                             SELENGKAPNYA
                         </a>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         </div>
     </div>
 @endsection

@@ -10,6 +10,7 @@
         @yield('page')
     </title>
     <link rel="icon" href="/assets/img/SIIL-Rounded.png" type="image/x-icon">
+
     <link href="https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap" rel="stylesheet">
     <style>
         .font-rhodium {
@@ -25,8 +26,10 @@
         <div>
             @yield('contents')
         </div>
+        @include('user.components.cart')
         @include('user.components.footer')
     </div>
+</body>
 </body>
 
 </html>

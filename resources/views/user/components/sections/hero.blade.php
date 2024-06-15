@@ -7,7 +7,7 @@
         <div class="absolute top-[632px] z-30 w-[90%] h-[200px] bg-white rounded-full shadow-lg grid grid-cols-3 px-8 items-center">
             <div class="flex items-center justify-center gap-4 h-[128px]">
                 <span class="text-[128px] font-bold text-[#343C53]">
-                    3
+                    5
                 </span>
                 <div class="flex flex-col font-bold">
                     <span class="text-[#343C53] text-[40px]">

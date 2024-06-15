@@ -15,14 +15,14 @@
             @endif
             @if (request()->routeIs('fakultas'))
                 <li id="hoverComponent" class="text-[#F25E5E]">
-                    <a href="">Fakultas</a>
+                    <button>Fakultas</button>
                 </li>
             @else
                 <li id="hoverComponent" class="hover:text-[#C72C2C]">
-                    <a href="">Fakultas</a>
+                    <button>Fakultas</button>
                 </li>
             @endif
-            @if (request()->routeIs('barang'))
+            @if (request()->routeIs('barang') || request()->routeIs('alat-bahan'))
                 <li class="text-[#F25E5E]">
                     <a href="">Barang</a>
                 </li>
@@ -58,7 +58,7 @@
         @endguest
 
         @auth
-            <div x-on:click="open = !open" class="group flex gap-3 bg-slate-200 rounded-full pl-4 cursor-pointer">
+            <div x-on:click="open = !open" @click.away="open = false" x-cloak class="group flex gap-3 bg-slate-200 rounded-full pl-4 cursor-pointer">
                 <p class="flex items-center text-2xl font-bold text-[#343C53]">{{ $user->username }}</p>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -81,7 +81,7 @@
     <div id="showComponent" class="hidden justify-between w-full py-16">
         <img src="/assets/img/BuildingOffice.svg" alt="" class="w-[200px] h-full">
         <div class="grid grid-cols-3 gap-6 gap-y-12 w-[80%]">
-            <a href="{{ route('fakultas') }}" class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
+            <a href="{{ route('fakultas', 'FMIPA') }}" class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
                 <span class="font-rhodium font-bold">
                     Fakultas MIPA
                 </span>
@@ -89,7 +89,7 @@
                     kombinasi terbaik di dalam ilmu sains
                 </span>
             </a>
-            <a href="{{ route('fakultas') }}" class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
+            <a href="{{ route('fakultas', 'FT') }}" class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
                 <span class="font-rhodium font-bold">
                     Fakultas Teknik
                 </span>
@@ -97,7 +97,7 @@
                     kombinasi terbaik di dalam ilmu sains
                 </span>
             </a>
-            <a href="{{ route('fakultas') }}" class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
+            <a href="{{ route('fakultas', 'FK') }}" class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
                 <span class="font-rhodium font-bold">
                     Fakultas Kedokteran
                 </span>
@@ -106,7 +106,7 @@
                 </span>
             </a>
             <div class="col-span-3 w-full flex justify-center gap-32">
-                <a href="{{ route('fakultas') }}"
+                <a href="{{ route('fakultas', 'FP') }}"
                     class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
                     <span class="font-rhodium font-bold">
                         Fakultas Pertanian
@@ -115,7 +115,7 @@
                         kombinasi terbaik di dalam ilmu sains
                     </span>
                 </a>
-                <a href="{{ route('fakultas') }}"
+                <a href="{{ route('fakultas', 'FKH') }}"
                     class="text-xl text-[#343C53] flex flex-col w-[296xpx] hover:underline">
                     <span class="font-rhodium font-bold">
                         Fakultas Kedokteran Hewan
