@@ -19,4 +19,8 @@ class Material extends Model
     {
         return $this->hasMany(RoomDetail::class, 'material_id');
     }
+    public function carts()
+    {
+        return $this->hasMany(Cart::class, 'material_id');
+    }
 }

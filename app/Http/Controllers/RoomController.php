@@ -31,6 +31,6 @@ class RoomController extends Controller
 
         $details = $details->paginate(8);
 
-        return view('user.pages.tools', compact('room', 'details', 'list_rooms'));
+        return view('user.pages.tools', compact('room', 'details', 'list_rooms', 'filter', 'major' ));
     }
 }

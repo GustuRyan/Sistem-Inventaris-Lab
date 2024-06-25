@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(RoomSeeder::class);
         // $this->call(MaterialSeeder::class);
         // $this->call(ToolSeeder::class);
-        $this->call(RoomDetailSeeder::class);
+        // $this->call(RoomDetailSeeder::class);
+        $this->call(RecommendSeeder::class);
     }
 }

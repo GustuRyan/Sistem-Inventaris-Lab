@@ -14,4 +14,13 @@ class TransactionDetail extends Model
         'trans_id',
         'amount',
     ];
+
+    public function material()
+    {
+        return $this->belongsTo(Material::class, 'material_id');
+    }
+    public function tool()
+    {
+        return $this->belongsTo(Tool::class, 'tool_id');
+    }
 }

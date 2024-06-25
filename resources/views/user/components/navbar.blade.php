@@ -1,6 +1,9 @@
 {{-- Navbar --}}
 <nav x-data="{ open: false }"
     class="fixed z-50 w-full h-auto shadow bg-white px-[78px] flex flex-col justify-between items-center">
+    @php
+        $user = Auth::user();
+    @endphp
     <div class="w-full h-auto flex justify-between items-center">
         <img class="w-[108px] h-[92px]" src="/assets/img/SIIL-Dark.svg" alt="SIIL Logo">
         <ul class="flex gap-20 text-xl font-bold text-[#343C53]">
@@ -31,19 +34,18 @@
                     <a href="{{ route('barang') }}">Barang</a>
                 </li>
             @endif
-            @if (request()->routeIs('peminjaman'))
-                <li class="text-[#F25E5E]">
-                    <a href="">Peminjaman</a>
-                </li>
-            @else
-                <li class="hover:text-[#C72C2C]">
-                    <a href="{{ route('peminjaman') }}">Peminjaman</a>
-                </li>
-            @endif
+            @auth
+                @if (request()->routeIs('peminjaman'))
+                    <li class="text-[#F25E5E]">
+                        <a href="">Peminjaman</a>
+                    </li>
+                @else
+                    <li class="hover:text-[#C72C2C]">
+                        <a href="{{ route('peminjaman', Auth::user()->id) }}">Peminjaman</a>
+                    </li>
+                @endif
+            @endauth
         </ul>
-        @php
-            $user = Auth::user();
-        @endphp
         @guest
             <div class="flex gap-3">
                 <a href="{{ route('authentication', 'login') }}"
@@ -58,7 +60,8 @@
         @endguest
 
         @auth
-            <div x-on:click="open = !open" @click.away="open = false" x-cloak class="group flex gap-3 bg-slate-200 rounded-full pl-4 cursor-pointer">
+            <div x-on:click="open = !open" @click.away="open = false" x-cloak
+                class="group flex gap-3 bg-slate-200 rounded-full pl-4 cursor-pointer">
                 <p class="flex items-center text-2xl font-bold text-[#343C53]">{{ $user->username }}</p>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -81,7 +84,8 @@
     <div id="showComponent" class="hidden justify-between w-full py-16">
         <img src="/assets/img/BuildingOffice.svg" alt="" class="w-[200px] h-full">
         <div class="grid grid-cols-3 gap-6 gap-y-12 w-[80%]">
-            <a href="{{ route('fakultas', 'FMIPA') }}" class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
+            <a href="{{ route('fakultas', 'FMIPA') }}"
+                class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
                 <span class="font-rhodium font-bold">
                     Fakultas MIPA
                 </span>
@@ -89,7 +93,8 @@
                     kombinasi terbaik di dalam ilmu sains
                 </span>
             </a>
-            <a href="{{ route('fakultas', 'FT') }}" class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
+            <a href="{{ route('fakultas', 'FT') }}"
+                class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
                 <span class="font-rhodium font-bold">
                     Fakultas Teknik
                 </span>
@@ -97,7 +102,8 @@
                     kombinasi terbaik di dalam ilmu sains
                 </span>
             </a>
-            <a href="{{ route('fakultas', 'FK') }}" class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
+            <a href="{{ route('fakultas', 'FK') }}"
+                class="text-xl text-[#343C53] flex flex-col w-[276px] hover:underline">
                 <span class="font-rhodium font-bold">
                     Fakultas Kedokteran
                 </span>

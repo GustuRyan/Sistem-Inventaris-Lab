@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Recommend extends Model
 {
     use HasFactory;
+    protected $table = 'recommend';
     protected $fillable = [
         'tool_id',
         'material_id',

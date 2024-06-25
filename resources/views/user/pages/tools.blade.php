@@ -13,7 +13,8 @@
                     class="w-full aspect-[2.08] max-md:max-w-full rounded-[48px]" alt="Image description" />
                 <div class="absolute top-0 w-full h-full flex justify-center items-center text-3xl font-bold text-[#F25E5E]">
                     <div class="w-[50%] text-center bg-white rounded-3xl py-28 px-8 shadow-xl opacity-90">
-                        Pilih dan Masuk ke Dalam Halaman Fakultas yang Anda Inginkan Terlebih Dahulu, Melalui Bar Navigasi Di Atas
+                        Pilih dan Masuk ke Dalam Halaman Fakultas yang Anda Inginkan Terlebih Dahulu, Melalui Bar Navigasi
+                        Di Atas
                     </div>
                 </div>
             </div>
@@ -107,8 +108,42 @@
                     </div>
                 </div>
             </div>
-
-            <div class="mt-80 max-md:mt-40 max-md:max-w-full">
+            <div class="mt-56 w-full flex justify-between items-center text-[28px} text-[#343C53] text-[28px] font-bold">
+                <span>
+                    Ditampilkan Berdasarkan
+                </span>
+                <div class="z-20">
+                    <div x-on:click="open = !open"
+                        class="w-[280px] px-4 py-2 border-[3px] border-[#343C53] text-2xl rounded-xl flex items-center justify-between cursor-pointer hover:opacity-80">
+                        <span>
+                            @if ($filter == 'material')
+                                Bahan Praktikum
+                            @else
+                                Alat Praktikum
+                            @endif
+                        </span>
+                        <img class="w-6 h-6" src="/assets/img/dropdown.png" alt="">
+                    </div>
+                    @if ($filter != 'material')
+                        <a x-show="open" @click.away="open = false" x-cloak
+                            href="{{ route('alat-bahan', ['major' => $major, 'filter' => 'material']) }}"
+                            class="w-[280px] mt-2 px-4 py-2 border-[3px] border-[#343C53] text-white text-2xl rounded-xl flex items-center gap-4 absolute bg-[#343C53] hover:bg-white hover:text-[#343C53]">
+                            <span>
+                                Bahan Praktikum
+                            </span>
+                        </a>
+                    @else
+                        <a x-show="open" @click.away="open = false" x-cloak
+                            href="{{ route('alat-bahan', ['major' => $major, 'filter' => 'alat']) }}"
+                            class="w-[280px] mt-2 px-4 py-2 border-[3px] border-[#343C53] text-white text-2xl rounded-xl flex items-center gap-4 absolute bg-[#343C53] hover:bg-white hover:text-[#343C53]">
+                            <span>
+                                Alat Praktikum
+                            </span>
+                        </a>
+                    @endif
+                </div>
+            </div>
+            <div class="mt-12 max-md:mt-40 max-md:max-w-full">
                 <div class="w-full flex flex-wrap gap-12 max-md:flex-col max-md:gap-0 justify-between">
                     @foreach ($details as $detail)
                         <article class="flex flex-col w-[300px] max-md:ml-0 max-md:w-full">
@@ -118,30 +153,81 @@
                                     class="object-cover absolute inset-0 size-full" alt="Image description" />
                                 <div class="flex relative flex-col px-9 pb-14 rounded-2xl max-md:px-5"
                                     style="background: linear-gradient(180deg, rgba(140, 54, 54, 0.00) 0%, #F25E5E 89.5%); height: 100%;">
-                                    <h3 class="mt-12 text-2xl font-bold text-white max-md:mt-10">
-                                        {{ $detail->material->material_name }}
-                                        <br>
-                                        {{ $detail->material->character }}
-                                        <br><br>
-                                        <span class="text-xl">
-                                            {{ $detail->material->condition }}
-                                        </span>
+                                    <h3 class="mt-20 text-2xl font-bold text-white max-md:mt-10">
+                                        @if ($filter == 'material')
+                                            {{ $detail->material->material_name }}
+                                            <br>
+                                            Karakter : {{ $detail->material->character }}
+                                            <br><br>
+                                            <span class="text-xl">
+                                                {{ $detail->material->condition }}
+                                            </span>
+                                        @else
+                                            {{ $detail->tool->tool_name }}
+                                            <br>
+                                            Merk : {{ $detail->tool->merk }}
+                                            <br><br>
+                                            Kondisi
+                                            {{ $detail->tool->condition }}
+                                        @endif
                                     </h3>
                                     <button
-                                        class="justify-center self-center px-10 py-3 mt-12 text-xl text-red-400 whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10"
-                                        tabindex="0">
+                                        class="justify-center self-center px-10 py-3 mt-12 text-xl text-red-400 whitespace-nowrap bg-white rounded-3xl max-md:px-5 max-md:mt-10 hover:bg-[#343C53] add-to-cart"
+                                        data-id="{{ $filter ==  'material' ? $detail->material->id : $detail->tool->id }}"
+                                        data-type="{{ $filter == 'material' ? 'material' : 'tool' }}" tabindex="0">
                                         PINJAM
                                     </button>
                                 </div>
                             </section>
                         </article>
                     @endforeach
-                    {{-- <div class="mt-4 px-2">
-                        {{ $details->links('pagination::tailwind') }}
-                    </div> --}}
                     @include('vendor.tailwind')
                 </div>
             </div>
         </section>
     @endif
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('.add-to-cart').click(function(e) {
+                e.preventDefault();
+
+                var itemId = $(this).data('id');
+                var itemType = $(this).data('type'); // Ambil tipe item (material atau tool)
+
+                console.log('Item ID:', itemId);
+                console.log('Item Type:', itemType);
+
+                $.ajax({
+                    type: 'POST',
+                    url: '{{ route('cart.add') }}',
+                    data: {
+                        item_id: itemId,
+                        type: itemType,
+                        amount: 1 // Set amount to 1
+                    },
+                    success: function(response) {
+                        console.log('Response:', response);
+                        alert(response.success);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX Error:', error);
+                        console.error('Status:', status);
+                        console.error('Response:', xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
 @endsection

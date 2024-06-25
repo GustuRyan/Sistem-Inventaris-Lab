@@ -15,4 +15,13 @@ class Tool extends Model
         'condition',
         'in_date',
     ];
+
+    public function roomDetails()
+    {
+        return $this->hasMany(RoomDetail::class, 'tool_id');
+    }
+    public function carts()
+    {
+        return $this->hasMany(Cart::class, 'tool_id');
+    }
 }
